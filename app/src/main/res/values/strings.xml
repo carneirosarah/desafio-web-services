@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">desafio-web-services</string>
+    <string name="login_welcome">Welcome to the Marvel HQs</string>
+    <string name="login_email">Email</string>
+    <string name="login_senha">Password</string>
+    <string name="login_button">LOG IN</string>
+    <string name="login_checkbox">Remember</string>
 </resources>
