@@ -5,4 +5,7 @@
     <string name="login_senha">Password</string>
     <string name="login_button">LOG IN</string>
     <string name="login_checkbox">Remember</string>
+    <string name="cadastro_nome">Name</string>
+    <string name="cadastro_button">SAVE</string>
+
 </resources>
