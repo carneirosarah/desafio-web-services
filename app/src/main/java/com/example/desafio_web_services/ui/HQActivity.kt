@@ -1,11 +1,12 @@
-package com.example.desafio_web_services
+package com.example.desafio_web_services.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.desafio_web_services.R
 
-class MainActivity : AppCompatActivity() {
+class HQActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_hq)
     }
 }
