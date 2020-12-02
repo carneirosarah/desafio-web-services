@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio_web_services.R
 import com.example.desafio_web_services.domain.HQ
 
-class HQAdapter (private val hqs: ArrayList<HQ>, val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapter.HQViewHolder>() {
+class HQAdapter (val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapter.HQViewHolder>() {
+
+    private val hqs = arrayListOf<HQ>()
 
     interface OnClickHQListener {
 
@@ -57,4 +59,10 @@ class HQAdapter (private val hqs: ArrayList<HQ>, val listener: OnClickHQListener
     }
 
     override fun getItemCount(): Int = hqs.size
+
+    fun addHqs(newHQs: ArrayList<HQ>) {
+        newHQs.forEach { it.thumbnail.path.replace("http", "https") }
+        hqs.addAll(newHQs)
+        notifyDataSetChanged()
+    }
 }
