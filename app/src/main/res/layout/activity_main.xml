@@ -8,8 +8,10 @@
     tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hq"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_hq"/>
 
 </LinearLayout>
