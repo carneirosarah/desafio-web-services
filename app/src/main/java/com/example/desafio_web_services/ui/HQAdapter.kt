@@ -63,7 +63,7 @@ class HQAdapter (val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapte
     override fun onBindViewHolder(holder: HQAdapter.HQViewHolder, position: Int) {
 
         var hq: HQ = hqs.get(position)
-        holder.idHQ.text = hq.id.toString()
+        holder.idHQ.text = "# " + hq.id.toString()
 
         val url = hq.thumbnail.path.replace("http", "https")
         val imageUri = url.toUri().buildUpon().scheme("https").build()
