@@ -14,12 +14,12 @@ class MainViewModel (repository: Repository): ViewModel() {
 
     val hqs = MutableLiveData<ArrayList<HQ>>()
 
-    fun popListHqs() {
+    fun popListHqs(offset: Int) {
         try {
             viewModelScope.launch {
                 hqs.value = repository.getResults(
-                        1,
-                        10,
+                        offset,
+                        15,
                         "1",
                         "f326731ea4c3b87d5692ceb79f6cca25",
                         "fd5ae999bbb427980b6cb3e3631152ff"
