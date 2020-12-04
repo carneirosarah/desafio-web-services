@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {
             }
         }
     }
-    var offset = 1
+    var offset = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,15 @@ class MainActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {
     }
 
     override fun onClickHQ(position: Int) {
-        var hq = viewModel.hqs.value?.get(position)
+        var newPosition = 0
+
+        if (position > 14) {
+            newPosition = position % 15
+        } else {
+            newPosition = position
+        }
+
+        var hq = viewModel.hqs.value?.get(newPosition)
         val intent = Intent(this, HQActivity::class.java)
         intent.putExtra("hq", hq)
         startActivity(intent)
