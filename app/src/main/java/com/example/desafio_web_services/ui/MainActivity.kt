@@ -1,5 +1,6 @@
 package com.example.desafio_web_services.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Adapter
@@ -42,6 +43,9 @@ class MainActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {
     }
 
     override fun onClickHQ(position: Int) {
-        Toast.makeText(this, position.toString(), Toast.LENGTH_SHORT).show()
+        var hq = viewModel.hqs.value?.get(position)
+        val intent = Intent(this, HQActivity::class.java)
+        intent.putExtra("hq", hq)
+        startActivity(intent)
     }
 }
