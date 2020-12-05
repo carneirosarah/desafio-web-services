@@ -19,12 +19,11 @@ class MainViewModel (repository: Repository): ViewModel() {
             viewModelScope.launch {
                 hqs.value = repository.getResults(
                         offset,
-                        15,
+                        10,
                         "1",
                         "f326731ea4c3b87d5692ceb79f6cca25",
                         "fd5ae999bbb427980b6cb3e3631152ff"
                 ).data.results
-                Log.i("DATA", hqs.toString())
             }
         } catch (e: Exception) {
             Log.e("MainViewModel", e.toString())

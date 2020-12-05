@@ -8,4 +8,4 @@ data class Data (val offset: Int, var results: ArrayList<HQ>): Serializable
 data class Date (var type: String, var date: String): Serializable
 data class Price(var type: String, var price: Double): Serializable
 data class Thumbnail(var path: String, var extension: String): Serializable
-data class HQ (val id: Int, var description: String,  var thumbnail: Thumbnail, var dates: ArrayList<Date>, var prices: ArrayList<Price>): Serializable
+data class HQ (val id: Int, var title: String, var issueNumber: Double, var pageCount: Int, var description: String,  var thumbnail: Thumbnail, var dates: ArrayList<Date>, var prices: ArrayList<Price>): Serializable

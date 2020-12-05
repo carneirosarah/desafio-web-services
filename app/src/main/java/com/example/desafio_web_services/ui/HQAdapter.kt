@@ -63,9 +63,9 @@ class HQAdapter (val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapte
     override fun onBindViewHolder(holder: HQAdapter.HQViewHolder, position: Int) {
 
         var hq: HQ = hqs.get(position)
-        holder.idHQ.text = "# " + hq.id.toString()
+        holder.idHQ.text = "# " + hq.issueNumber.toString()
 
-        val url = hq.thumbnail.path.replace("http", "https")
+        val url = hq.thumbnail.path.replace("http", "https") + "/portrait_medium." + hq.thumbnail.extension
         val imageUri = url.toUri().buildUpon().scheme("https").build()
         Glide.with(holder.imageHQ.context)
             .load(imageUri)
