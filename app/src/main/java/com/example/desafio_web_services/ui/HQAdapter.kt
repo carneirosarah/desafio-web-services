@@ -21,7 +21,7 @@ import java.net.URL
 
 class HQAdapter (val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapter.HQViewHolder>() {
 
-    private val hqs = arrayListOf<HQ>()
+    private var hqs = arrayListOf<HQ>()
 
     interface OnClickHQListener {
 
@@ -79,7 +79,7 @@ class HQAdapter (val listener: OnClickHQListener): RecyclerView.Adapter<HQAdapte
 
     fun addHqs(newHQs: ArrayList<HQ>) {
         //newHQs.forEach { it.thumbnail.path.replace("http", "https") }
-        hqs.addAll(newHQs)
+        hqs = newHQs
         notifyDataSetChanged()
     }
 }
