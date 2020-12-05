@@ -50,12 +50,14 @@ class MainActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {
 
     override fun onClickHQ(position: Int) {
         var newPosition = 0
-
-        if (position > 14) {
-            newPosition = position % 15
+        Log.e("POS", position.toString())
+        if (position > 9) {
+            newPosition = position % 10
         } else {
             newPosition = position
         }
+
+        Log.e("New POS", newPosition.toString())
 
         var hq = viewModel.hqs.value?.get(newPosition)
         val intent = Intent(this, HQActivity::class.java)
@@ -74,7 +76,7 @@ class MainActivity : AppCompatActivity(), HQAdapter.OnClickHQListener {
                     val vItem = gridLayoutManager.findFirstCompletelyVisibleItemPosition()
                     val itens = adapter.itemCount
 
-                    if (lItem + vItem > itens) {
+                    if (lItem + vItem >= itens) {
                         viewModel.popListHqs(offset)
                         offset++
                     }
